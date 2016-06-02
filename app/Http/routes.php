@@ -11,32 +11,23 @@
 |
 */
 
-
-
-Route::auth();
-
 Route::group(['middleware' => 'web'], function () {
 
   Route::get('/', 'HomepageController@index');
 
-  Route::get('/services', function()
-  {
-    return view('homepage.services');
-  });
+  Route::get('/services', 'HomepageController@services');
 
-  Route::get('/about', function()
-  {
-    return view('homepage.about');
-  });
+  Route::get('/about', 'HomepageController@about');
 
-  Route::get('/contact', function()
-  {
-    return view('homepage.contact');
-  });
+  Route::get('/contact', 'HomepageController@contact');
+
+  Route::get('/login', 'Auth\AuthController@getLogin');
 
   Route::group(['middleware' => 'admin'], function()
   {
     Route::get('/admin/dashboard', 'AdminController@dashboard');
+
+    Route::get('/admin/newpegawai', 'Auth/AuthController@showRegister');
   });
 
   Route::group(['middleware' => 'kargo'], function()
@@ -49,4 +40,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/dbk/dashboard', 'DBKController@dashboard');
   });
 
+  Route::get('/logout', 'Auth\AuthController@logout');
 });
