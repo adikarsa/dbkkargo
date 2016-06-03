@@ -23,4 +23,16 @@ class HomepageController extends Controller
       }
       return view('homepage.homepage');
     }
+
+    public function services(){
+      return view('homepage.services');
+    }
+
+    public function about(){
+      return view('homepage.about');
+    }
+
+    public function contact(){
+      return view('homepage.contact');
+    }
 }
