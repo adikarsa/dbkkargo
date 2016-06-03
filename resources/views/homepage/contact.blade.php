@@ -14,8 +14,16 @@
               <h2></h2>
                   <img src="image/LOGODBK.jpg" alt="image" style="width:304px;height:228px;">
               <p>
-                  Jl. S. Supriadi No.62, Bendogerit, Sananwetan,
-                 <br> Kota Blitar, Jawa Timur
+                <b>  Office and Storage</b>
+                 <br>Emerald Green Blok D8
+                 <br> Bukit Semarang Baru
+                 <br> Semarang  Jawa Tengah 50189
+                 <br>Indonesia
+                 <br>
+                 <br>Contact
+                 <br>Office
+                 <br>fax
+                 <br>email
               </p>
             </div>
             <div class="col-md-7">
