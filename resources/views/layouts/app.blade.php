@@ -40,7 +40,7 @@
   <br>
   <div class="row">
     <div class="col-md-3 col-md-offset-2">
-      <img src="image/Logo-3.png" style="width: 150px; height: 75px" />
+      <img src="image/logo.png" style="width: 150px; height: 75px" />
     </div>
     <div class="col-md-6">
       <h3>Devian Bachti Karsa</h2>

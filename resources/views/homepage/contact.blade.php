@@ -12,7 +12,7 @@
           <div class="row">
             <div class="col-md-5">
               <h2></h2>
-                  <img src="image/LOGODBK.jpg" alt="image" style="width:304px;height:228px;">
+                  <img src="image/logo.jpg" alt="image" style="width:340px;height:180px;">
               <p>
                 <b>  Office and Storage</b>
                  <br>Emerald Green Blok D8
