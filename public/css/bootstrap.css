@@ -4171,6 +4171,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+  padding: 10px 25px;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -6776,4 +6777,41 @@ button.close {
                 border:2px solid #243e90;
                 background-color:#243e90;
                 color:#fafafa;
+}
+
+img {
+  max-height: 90%;
+  max-width: 90%;
+}
+.content {
+  min-height: 425px;
+  padding: 25px 0px;
+}
+footer {
+  background-color: #f2f2f2;
+  padding: 7px;
+  border-top-style: solid;
+  border-top-width: thin;
+  border-top-color: #e7e7e7;
+  background-color: #f8f8f8;
+}
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Add a gray background color and some padding to the footer */
+
+.carousel-inner img {
+  width: 100%; /* Set width to 100% */
+  margin: auto;
+  min-height:200px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+.carousel-caption {
+  display: none;
+}
 }

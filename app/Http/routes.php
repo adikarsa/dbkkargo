@@ -11,6 +11,8 @@
 |
 */
 
+Route::post('/login', 'Auth\AuthController@Login');
+
 Route::group(['middleware' => 'web'], function () {
 
   Route::get('/', 'HomepageController@index');
