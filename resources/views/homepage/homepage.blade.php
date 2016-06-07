@@ -40,6 +40,20 @@
 </div>
 
 <div class="container text-center">
+  <h3>Track Your Goods Here</h3>
+  <form class="" role="form" method="POST" action="{{ url('/track') }}" method="post">
+    {{ csrf_field() }}
+    <input class="search" type="search" name="track" value="{{ old('awb') }}" style="width:60%">
+    <input class="button" type="button" value="Search">
+    @if ($errors->has('awb'))
+        <span class="help-block">
+            <strong>{{ $errors->first('awb') }}</strong>
+        </span>
+    @endif
+  </form>
+</div>
+
+<div class="container text-center">
   <h3>What We Do</h3><br>
   <div class="row">
     <div class="col-sm-4">

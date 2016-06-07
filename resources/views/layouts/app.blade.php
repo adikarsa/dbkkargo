@@ -4,9 +4,10 @@
   <title>DBK Kargo</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
@@ -35,8 +36,20 @@
   </style>
 </head>
 <body>
-
-<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-2">
+      <img src="image/Logo-3.png" style="width: 150px; height: 75px" />
+    </div>
+    <div class="col-md-6">
+      <h3>Devian Bachti Karsa</h2>
+      <h4>Your Trusted Cargo</h3>
+    </div>
+  </div>
+  <br>
+</div>
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -44,7 +57,6 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {{-- <a class="navbar-brand" href="{{ url('/') }}">DBK Kargo</a>  --}}
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
