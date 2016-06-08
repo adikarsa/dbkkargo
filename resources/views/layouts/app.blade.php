@@ -33,10 +33,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="{{ Request::is( '/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
-        <li class="{{ Request::is( 'services') ? 'active' : '' }}"><a href="{{ url('/services') }}">Services</a></li>
-        <li class="{{ Request::is( 'about') ? 'active' : '' }}"><a href="{{ url('/about') }}">About</a></li>
-        <li class="{{ Request::is( 'contact') ? 'active' : '' }}"><a href="{{ url('/contact') }}">Contact</a></li>
+        <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+        <li class="{{ Request::is('services') ? 'active' : '' }}"><a href="{{ url('/services') }}">Services</a></li>
+        <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="{{ url('/about') }}">About</a></li>
+        <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{ url('/contact') }}">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())
@@ -48,7 +48,7 @@
     </div>
   </div>
 </nav>
-<div class="content">
+<div class="{{ Request::is('/') ? '' : 'content' }}">
 
     @yield('content')
 
