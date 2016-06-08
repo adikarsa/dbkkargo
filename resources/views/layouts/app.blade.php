@@ -13,7 +13,9 @@
   <br>
   <div class="row">
     <div class="col-md-3 col-md-offset-2">
-      <img src="/image/logo.png" style="width: 150px; height: 75px" />
+      <a href="{{ url('/') }}">
+        <img src="/image/logo.png" style="width: 150px; height: 75px" />
+      </a>
     </div>
     <div class="col-md-6">
       <h3>Devian Bachti Karsa</h2>
@@ -31,7 +33,7 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
         <li class="{{ Request::is('services') ? 'active' : '' }}"><a href="{{ url('/services') }}">Services</a></li>
