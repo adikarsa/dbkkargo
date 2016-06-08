@@ -6782,10 +6782,18 @@ img {
   max-height: 90%;
   max-width: 90%;
 }
+
 .content {
-  min-height: 425px;
+  min-height: 445px;
   padding: 25px 0px;
 }
+
+@media (min-width: 1367px) {
+  .content {
+    min-height: 675px !important;
+  }
+}
+
 footer {
   background-color: #f26722;
   padding: 7px;
@@ -6808,6 +6816,11 @@ footer {
   min-height:200px;
 }
 
+@media (min-width: 992px) {
+  .container-fluid > .row > .hdr {
+    margin-left: -180px;
+  }
+}
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
 .carousel-caption {

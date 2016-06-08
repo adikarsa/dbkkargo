@@ -17,9 +17,9 @@
         <img src="/image/logo.png" style="width: 150px; height: 75px" />
       </a>
     </div>
-    <div class="col-md-6">
+    <div class="hdr col-md-6 text-center">
       <h3>Devian Bachti Karsa</h2>
-      <h4>Professional Full Services</h3>
+      <h4><i>Professional Full Services</i></h3>
     </div>
   </div>
   <br>
