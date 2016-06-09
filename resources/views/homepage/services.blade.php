@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="col-md-10">
-      <h1 class="col-md-offset-2">Our Services</h1>
+      <h1 class="col-md-offset-2">Layanan</h1>
     </div>
     <div class="text-center">
       <div class="row">
@@ -32,7 +32,7 @@
                   </p>
                 </div>
                 <div class="col-md-6 col-xs-8 ">
-                  <h3>Trucking</h3>
+                  <h3>Pengantaran Barang</h3>
                   <p>
                     <img src="/image/truck.jpg" alt="image" style="width:304px;height:228px;">
                   </p>
