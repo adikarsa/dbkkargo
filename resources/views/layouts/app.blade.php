@@ -42,9 +42,9 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())
-          <li class="{{ Request::is( 'logout') ? 'active' : '' }}"><a href="{{ url('logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li class="{{ Request::is( 'logout') ? 'active' : '' }}"><a href="{{ url('logout') }}"><span class="glyphicon glyphicon-log-in"></span> Keluar</a></li>
         @else
-          <li class="{{ Request::is( 'login') ? 'active' : '' }}"><a href="{{ url('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li class="{{ Request::is( 'login') ? 'active' : '' }}"><a href="{{ url('login') }}"><span class="glyphicon glyphicon-log-in"></span> Masuk</a></li>
         @endif
       </ul>
     </div>

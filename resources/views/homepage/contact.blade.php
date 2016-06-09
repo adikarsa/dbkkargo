@@ -9,16 +9,16 @@
             <div class="col-md-5">
               <img src="image/logo.jpg" alt="image" style="width:390px; height:150px; padding-bottom:20px;">
               <p>
-                 <b>Office and Storage</b>
+                 <b>Kantor dan Gudang</b>
                  <br>Emerald Green Blok D8
                  <br>Bukit Semarang Baru
                  <br>Semarang  Jawa Tengah 50189
                  <br>Indonesia
                  <br>
-                 <br>Contact :
-                 <br>Office :
+                 <br>Kontak
+                 <br>Office : Adi Ganteng
                  <br>Fax    :
-                 <br>Email  :
+                 <br>Email  : mbachtiar66@yahoo.com
               </p>
             </div>
             <div class="col-md-7">

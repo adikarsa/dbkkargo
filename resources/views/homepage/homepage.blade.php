@@ -46,13 +46,32 @@
   <form class="" role="form" method="POST" action="{{ url('/track') }}" method="post">
     {{ csrf_field() }}
     <input class="search" type="search" name="track" value="{{ old('awb') }}" style="width:60%">
-    <input class="button" type="button" value="Search">
+    <input class="button" type="button" data-toggle="modal" data-target="#myModal" value="Search">
     @if ($errors->has('awb'))
         <span class="help-block">
             <strong>{{ $errors->first('awb') }}</strong>
         </span>
     @endif
   </form>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container text-center">
