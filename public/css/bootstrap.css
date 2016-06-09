@@ -4497,7 +4497,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
   background-color: #f26722;
-  border-color: #243e90 ;
+  border-top: 1px solid  #243e90;
+  border-bottom: 1px solid #243e90;
 }
 .navbar-default .navbar-brand {
   color: #777;
