@@ -27,7 +27,7 @@
                   <img src="http://placehold.it/300x160?text=Service-3" class="img-responsive" style="width:100%" alt="Image">
                 </div>
                 <div class="col-md-6 col-xs-8 ">
-                  <h3>Trucking</h3>
+                  <h3>Pengangkutan Barang</h3>
                   <img src="http://placehold.it/300x160?text=Service-4" class="img-responsive" style="width:100%" alt="Image">
                 </div>
               </div>

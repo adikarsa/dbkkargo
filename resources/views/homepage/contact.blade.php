@@ -15,7 +15,7 @@
                  <br>Semarang  Jawa Tengah 50189
                  <br>Indonesia
                  <br>
-                 <br>Contact
+                 <br>Contact :
                  <br>Office :
                  <br>Fax    :
                  <br>Email  :
