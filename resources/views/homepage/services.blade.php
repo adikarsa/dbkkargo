@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="col-md-10">
-      <h1 class="col-md-offset-2">Our Services</h1>
+      <h1 class="col-md-offset-2">Layanan</h1>
     </div>
     <div class="text-center">
       <div class="row">
