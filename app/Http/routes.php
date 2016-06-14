@@ -29,7 +29,9 @@ Route::group(['middleware' => 'web'], function () {
   {
     Route::get('/admin/dashboard', 'AdminController@dashboard');
 
-    Route::get('/admin/newpegawai', 'Auth/AuthController@showRegister');
+    Route::get('/admin/pegawai', 'AdminController@pegawai');
+
+    Route::post('/admin/newpegawai','AdminController@newpegawai');
   });
 
   Route::group(['middleware' => 'kargo'], function()

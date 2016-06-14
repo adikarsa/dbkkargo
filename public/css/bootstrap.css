@@ -6808,6 +6808,11 @@ footer {
   border-radius: 0;
 }
 
+.table-scroll {
+  overflow-y: auto;
+  height: 287px;
+}
+
 /* Add a gray background color and some padding to the footer */
 
 .carousel-inner img {

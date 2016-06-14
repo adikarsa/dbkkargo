@@ -16,7 +16,8 @@ class UsersTableSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@mail.com',
             'password' => bcrypt('admin123'),
-            'role' => 'admin'
+            'role' => 'admin',
+            'contact' => '081000000000'
         ]);
 
         // second user without role
@@ -24,6 +25,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Adi Nurdiansah',
             'email' => 'adi@mail.com',
             'password' => bcrypt('rahasia123'),
+            'contact' => '081000000099'
         ]);
 
         // third user with kargo role
@@ -31,7 +33,8 @@ class UsersTableSeeder extends Seeder
             'name' => 'Zain F Fauzi',
             'email' => 'zain@mail.com',
             'password' => bcrypt('rahasia123'),
-            'role' => 'kargo'
+            'role' => 'kargo',
+            'contact' => '081000000011'
         ]);
     }
 }
