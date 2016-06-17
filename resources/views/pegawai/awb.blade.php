@@ -8,7 +8,7 @@
                 <div class="panel-heading">Selamat Datang</div>
 
                 <div class="panel-body">
-                    Your DBK User's Landing Page.
+                    Your Pegawai User's Landing Page.
                 </div>
             </div>
         </div>

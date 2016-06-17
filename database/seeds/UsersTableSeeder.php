@@ -25,16 +25,8 @@ class UsersTableSeeder extends Seeder
             'name' => 'Adi Nurdiansah',
             'email' => 'adi@mail.com',
             'password' => bcrypt('rahasia123'),
+            'role' => 'pegawai',
             'contact' => '081000000099'
-        ]);
-
-        // third user with kargo role
-        DB::table('users')->insert([
-            'name' => 'Zain F Fauzi',
-            'email' => 'zain@mail.com',
-            'password' => bcrypt('rahasia123'),
-            'role' => 'kargo',
-            'contact' => '081000000011'
         ]);
     }
 }

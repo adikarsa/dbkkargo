@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class KargoMiddleware
+class PegawaiMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class KargoMiddleware
      */
      public function handle($request, Closure $next)
      {
-         if (Auth::check() && Auth::user()->role == 'kargo') {
+         if (Auth::check() && Auth::user()->role == 'pegawai') {
            return $next($request);
          }
 

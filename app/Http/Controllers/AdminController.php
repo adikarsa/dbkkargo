@@ -27,6 +27,7 @@ class AdminController extends Controller
           'email' => 'required|email|max:255|unique:users',
           'password' => 'required|min:6',
           'role' => 'required',
+          'contact' => 'required|min:10|max:12',
       ]);
 
       if ($validator->fails()) {
@@ -40,8 +41,14 @@ class AdminController extends Controller
           'email' => $request->email,
           'password' => bcrypt($request->password),
           'role' => $request->role,
+          'contact' => $request->contact,
       ]);
 
+      return redirect('admin/pegawai');
+    }
+
+    public function dltpegawai($id){
+      User::findOrFail($id)->delete();
       return redirect('admin/pegawai');
     }
 }

@@ -12,7 +12,11 @@ class CreateTableAwb extends Migration
      */
     public function up()
     {
-        //
+      Schema::create('awb', function (Blueprint $table) {
+          $table->increments('id');
+          $table->string('awb');
+          $table->timestamps();
+      });
     }
 
     /**

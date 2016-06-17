@@ -4,7 +4,6 @@
   <title>DBK Kargo</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="/css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
@@ -48,13 +47,16 @@
           @if (Auth::user()->role=="admin")
             <li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}"><a href="{{ url('/admin/dashboard') }}">Dashboard</a></li>
             <li class="{{ Request::is('admin/pegawai') ? 'active' : '' }}"><a href="{{ url('/admin/pegawai') }}">Pegawai</a></li>
-          @elseif (Auth::user()->role=="dbk")
-
+          @elseif (Auth::user()->role=="pegawai")
+            <li class="{{ Request::is('pegawai/dashboard') ? 'active' : '' }}"><a href="{{ url('/pegawai/dashboard') }}">Dashboard</a></li>
+            <li class="{{ Request::is('pegawai/barang') ? 'active' : '' }}"><a href="{{ url('/pegawai/barang') }}">Barang</a></li>
+            <li class="{{ Request::is('pegawai/awb') ? 'active' : '' }}"><a href="{{ url('/pegawai/awb') }}">AWB</a></li>
+            <li class="{{ Request::is('pegawai/status') ? 'active' : '' }}"><a href="{{ url('/pegawai/status') }}">Status</a></li>
           @endif
         @else
           <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Beranda</a></li>
           <li class="{{ Request::is('services') ? 'active' : '' }}"><a href="{{ url('services') }}">Layanan</a></li>
-          <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="{{ url('about') }}">Tentang</a></li>
+          <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="{{ url('about') }}">Tentang Kami</a></li>
           <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{ url('contact') }}">Kontak</a></li>
         @endif
       </ul>

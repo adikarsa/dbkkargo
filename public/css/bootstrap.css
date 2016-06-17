@@ -2265,7 +2265,6 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20px;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -6810,7 +6809,7 @@ footer {
 
 .table-scroll {
   overflow-y: auto;
-  height: 287px;
+  height: 245px;
 }
 
 /* Add a gray background color and some padding to the footer */

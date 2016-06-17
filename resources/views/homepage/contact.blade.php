@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container text-center">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h1>Kontak</h1>
+        <div class="col-md-12">
           <div class="row">
             <div class="col-md-5">
-              <img src="image/logo.jpg" alt="image" style="width:390px; height:150px; padding-bottom:20px;">
+              <img src="image/logo.jpg" alt="image" style="width:290px; height:120px; padding-bottom:20px;">
               <p>
                  <b>Kantor dan Gudang</b>
                  <br>Emerald Green Blok D8
@@ -22,7 +21,7 @@
               </p>
             </div>
             <div class="col-md-7">
-              <div style="width:600px; overflow:hidden; height:400px; max-width:100%;">
+              <div style="width:600px; overflow:hidden; height:395px; max-width:100%;">
                 <div id="embed-map-display" style="height:100%; width:100%;max-width:100%;">
                   <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=-7.045016,+110.326627&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU">
                   </iframe>

@@ -80,10 +80,8 @@ class AuthController extends Controller
     {
       if ($user->role === 'admin') {
         return redirect()->intended('/admin/dashboard');
-      } elseif ($user->role === 'kargo') {
-        return redirect()->intended('/kargo/dashboard');
-      } elseif ($user->role === 'dbk') {
-        return redirect()->intended('/dbk/dashboard');
+      } elseif ($user->role === 'pegawai') {
+        return redirect()->intended('/pegawai/dashboard');
       }
     }
 }

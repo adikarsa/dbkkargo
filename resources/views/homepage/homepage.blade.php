@@ -44,7 +44,6 @@
 <div class="container text-center">
   <h3>Lacak barang anda</h3>
   <form class="" role="form" method="POST" action="{{ url('/track') }}" method="post">
-    {{ csrf_field() }}
     <input class="search" type="search" name="track" value="{{ old('awb') }}" style="width:60%">
     <input class="button" type="button" data-toggle="modal" data-target="#myModal" value="Search">
     @if ($errors->has('awb'))
@@ -75,7 +74,7 @@
 </div>
 
 <div class="container text-center">
-  <h3>Kegiatan</h3><br>
+  <h3>Yang Kami Lakukan</h3>
   <div class="row">
     <div class="col-sm-4">
       <img src="http://placehold.it/300x160?text=Service-1" class="img-responsive" style="width:100%" alt="Image">

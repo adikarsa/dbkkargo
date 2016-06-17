@@ -23,4 +23,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function goods()
+    {
+      return $this->hasMany('App\Barang','inputted_by');
+    }
 }

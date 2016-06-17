@@ -32,6 +32,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/admin/pegawai', 'AdminController@pegawai');
 
     Route::post('/admin/newpegawai','AdminController@newpegawai');
+
+    Route::delete('/admin/dltpegawai/{id}','AdminController@dltpegawai');
   });
 
   Route::group(['middleware' => 'kargo'], function()
@@ -39,9 +41,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/kargo/dashboard', 'KargoController@dashboard');
   });
 
-  Route::group(['middleware' => 'dbk'], function()
+  Route::group(['middleware' => 'pegawai'], function()
   {
-    Route::get('/dbk/dashboard', 'DBKController@dashboard');
+    Route::get('/pegawai/dashboard', 'PegawaiController@dashboard');
+    Route::get('/pegawai/barang','PegawaiController@barang');
+    Route::get('/pegawai/awb','PegawaiController@awb');
+    Route::get('/pegawai/status','PegawaiController@status');
   });
 
   Route::get('/logout', 'Auth\AuthController@logout');
