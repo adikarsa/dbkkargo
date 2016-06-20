@@ -47,6 +47,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/pegawai/barang','PegawaiController@barang');
     Route::get('/pegawai/awb','PegawaiController@awb');
     Route::get('/pegawai/status','PegawaiController@status');
+
+    Route::post('/pegawai/newbarang', 'PegawaiController@newbarang');
+    Route::post('/pegawai/setAWB', 'PegawaiController@setAWB');
+    Route::post('/pegawai/setStatus','PegawaiController@setStatus');
   });
 
   Route::get('/logout', 'Auth\AuthController@logout');

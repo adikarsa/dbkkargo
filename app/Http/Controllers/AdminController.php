@@ -17,7 +17,8 @@ class AdminController extends Controller
 
     public function pegawai(){
       return view('admin.pegawai', [
-          'users' => User::orderBy('created_at','asc')->get()
+          'users' => User::orderBy('created_at','asc')
+                ->get()
       ]);
     }
 
@@ -31,7 +32,7 @@ class AdminController extends Controller
       ]);
 
       if ($validator->fails()) {
-          return redirect('admin/pegawai')
+          return redirect('/admin/pegawai')
               ->withInput()
               ->withErrors($validator);
       }
@@ -44,11 +45,11 @@ class AdminController extends Controller
           'contact' => $request->contact,
       ]);
 
-      return redirect('admin/pegawai');
+      return redirect('/admin/pegawai');
     }
 
     public function dltpegawai($id){
       User::findOrFail($id)->delete();
-      return redirect('admin/pegawai');
+      return redirect('/admin/pegawai');
     }
 }
