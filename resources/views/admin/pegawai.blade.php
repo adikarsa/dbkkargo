@@ -69,65 +69,68 @@
         <input id="search" class="form-control" type="text" id="search" placeholder="Type to search" style="margin-bottom: 10px!important;">
         <div class="panel panel-default">
           <!-- Table -->
-          <div class="">
-            <table class="table">
-              <tr height="15px">
-                <th style="width:5%">
-                  No
-                </th>
-                <th style="width:20%">
-                  Nama
-                </th>
-                <th style="width:20%">
-                  Email
-                </th>
-                <th style="width:10%">
-                  Password
-                </th>
-                <th style="width:15%">
-                  Role
-                </th>
-                <th style="width:15%">
-                  Kontak
-                </th>
-                <th style="width:15%">
-                  Action
-                </th>
-              </tr>
-            </table>
-          </div>
           <div class="table-scroll">
-            <table id="table" class="table">
-              @foreach ($users as $index => $user)
-              <tr>
-                <td style="width:5%">
-                  {{$index+1}}
-                </td>
-                <td style="width:20%">
-                  {{$user->name}}
-                </td>
-                <td style="width:20%">
-                  {{$user->email}}
-                </td>
-                <td style="width:10%">
-                  ******
-                </td>
-                <td style="width:15%">
-                  {{$user->role}}
-                </td>
-                <td style="width:15%">
-                  {{$user->contact}}
-                </td>
-                <td style="width:15%">
-                  <form class="form-horizontal" action="{{url('admin/dltpegawai/'.$user->id)}}" method="post">
-                    {{ method_field('DELETE') }}
-                    <button type="submit">
-                        <img src="/image/del-icon.png" alt="del" style="width:16px; height:16px;" />
-                    </button>
-                  </form>
-                </td>
-              </tr>
-              @endforeach
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr height="15px">
+                  <th class="text-center" style="width:5%">
+                    No
+                  </th>
+                  <th class="text-center" style="width:20%">
+                    Nama
+                  </th>
+                  <th class="text-center" style="width:20%">
+                    Email
+                  </th>
+                  <th class="text-center" style="width:10%">
+                    Password
+                  </th>
+                  <th class="text-center" style="width:15%">
+                    Role
+                  </th>
+                  <th class="text-center" style="width:15%">
+                    Kontak
+                  </th>
+                  <th class="text-center" style="width:15%">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="table">
+                @foreach ($users as $index => $user)
+                <tr>
+                  <td class="text-left" style="width:5%">
+                    {{$index+1}}
+                  </td>
+                  <td class="text-left" style="width:20%">
+                    {{$user->name}}
+                  </td>
+                  <td class="text-left" style="width:20%">
+                    {{$user->email}}
+                  </td>
+                  <td class="text-left" style="width:10%">
+                    ******
+                  </td>
+                  <td class="text-left" style="width:15%">
+                    {{$user->role}}
+                  </td>
+                  <td class="text-left" style="width:15%">
+                    {{$user->contact}}
+                  </td>
+                  <td class="text-left" style="width:15%">
+                      <form action="" method="post" class="col-md-4 col-md-offset-1">
+                        <button type="submit" class="btn btn-xs glyphicon glyphicon-pencil">
+                        </button>
+                      </form>
+                      <form action="{{url('admin/dltpegawai/'.$user->id)}}" method="post" class="col-md-4">
+                        {{ method_field('DELETE') }}
+                        <button type="submit" class="btn btn-xs btn-danger glyphicon glyphicon-trash">
+                        </button>
+                      </form>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
             </table>
           </div>
           <script type="text/javascript">

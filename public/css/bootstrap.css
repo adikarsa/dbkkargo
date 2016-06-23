@@ -152,7 +152,8 @@ input[type="radio"] {
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
+  -webkit-appearance: none;
+  margin: 0;
 }
 input[type="search"] {
   -webkit-box-sizing: content-box;
@@ -2264,7 +2265,7 @@ th {
 }
 .table {
   width: 100%;
-  max-width: 100%;
+  min-width: 100%;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -6808,8 +6809,9 @@ footer {
 }
 
 .table-scroll {
-  overflow-y: auto;
+  overflow: auto;
   height: 245px;
+  width: 100%;
 }
 
 /* Add a gray background color and some padding to the footer */

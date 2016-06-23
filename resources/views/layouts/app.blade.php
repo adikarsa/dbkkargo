@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/flags.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
 </head>
@@ -12,6 +13,12 @@
 <div class="container-fluid">
   <br>
   <div class="row">
+    @if (!Auth::check())
+      <div class="pull-right" style="margin-right:50px;">
+        <a href="#"><img src="/image/blank.png" class="flag flag-gb" alt="EN" /></a>
+        <a href="#"><img src="/image/blank.png" class="flag flag-id" alt="ID" /></a>
+      </div>
+    @endif
     <div class="col-md-3 col-md-offset-2">
       <a href="{{ url('/') }}">
         <img src="/image/logo.png" style="width: 150px; height: 75px" />
@@ -22,12 +29,7 @@
       <h4><i>Professional Full Services</i></h3>
     </div>
     {{-- Bahasa --}}
-    <div class="col-md-1 text-right" style="width:25%">
-      <div class="row">
-        <a href="#">English</a>
-        <a href="#">Indonesia</a>
-      </div>
-    </div>
+
   </div>
   <br>
 </div>

@@ -23,10 +23,9 @@ class CreateTableBarang extends Migration
             $table->string('origin');
             $table->string('destination');
             $table->string('note');
-            $table->integer('inputted_by');
-            $table->string('awb');
-            $table->integer('status_id');
-            $table->rememberToken();
+            $table->string('inputted_by');
+            $table->string('awb')->nullable();
+            $table->integer('status_id')->nullable();
             $table->timestamps();
         });
     }

@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Barang;
 use App\AWB;
 use App\Status;
+use Validator;
+use Auth;
 
 class PegawaiController extends Controller
 {
@@ -16,40 +18,20 @@ class PegawaiController extends Controller
       return view('pegawai.dashboard');
     }
 
-
-
     public function barang(){
       return view('pegawai.barang', [
-          'barang' => Barang::where('created_at', 'like', date('Y-m-d'))
-                ->orderBy('created_at','asc')
-                ->get()
+          'barang' => Barang::whereDate('created_at','>',(date('Y-m-d', strtotime('-3 days'))))
+              ->where('awb','=',NULL)
+              ->orderBy('created_at','asc')
+              ->get()
       ]);
     }
 
-
-    public function awb(){
-      return view('pegawai.awb');
-    }
-
-    public function status(){
-      return view('pegawai.status');
-    }
-
     public function newbarang(Request $request){
-      $table->string('name');
-      $table->string('commodity');
-      $table->integer('total');
-      $table->double('weight', 15, 2 );
-      $table->string('sender');
-      $table->string('receiver');
-      $table->string('origin');
-      $table->string('destination');
-      $table->string('note');
-      $table->integer('inputted_by');
       $validator = Validator::make($request->all(), [
           'name' => 'required|max:255',
           'commodity' => 'required|max:255',
-          'total' => 'required|min:6',
+          'total' => 'required',
           'weight' => 'required',
           'sender' => 'required|max:255',
           'receiver' => 'required|max:255',
@@ -59,7 +41,7 @@ class PegawaiController extends Controller
       ]);
 
       if ($validator->fails()) {
-          return redirect('admin/pegawai')
+          return redirect('pegawai/dashboard')
               ->withInput()
               ->withErrors($validator);
       }
@@ -80,8 +62,47 @@ class PegawaiController extends Controller
       return redirect('/pegawai/barang');
     }
 
+    public function dltpegawai($id){
+      Barang::findOrFail($id)->delete();
+      return redirect('/pegawai/barang');
+    }
+
+    public function awb(){
+      return view('pegawai.awb', [
+          'barang' => Barang::whereDate('created_at','>',(date('Y-m-d', strtotime('-3 days'))))
+              ->where('awb','=',NULL)
+              ->orderBy('id','asc')
+              ->get()
+      ]);
+    }
+
     public function setAWB(Request $request){
+      $validator =  Validator::make($request->all(), [
+        'awb' => 'required|unique:awb',
+        'brg.*' => 'required',
+      ]);
+
+      if ($validator->fails()) {
+          return redirect('pegawai/awb')
+              ->withInput()
+              ->withErrors($validator);
+      }
+
+      AWB::create([
+        'awb' => $request->awb,
+      ]);
+
+      foreach ($request->brg as $temp) {
+        $barang = Barang::find($temp);
+        $barang->awb = $request->awb;
+        $barang->save();
+      }
+
       return redirect('/pegawai/awb');
+    }
+
+    public function status(){
+      return view('pegawai.status');
     }
 
     public function setStatus(Request $request){
