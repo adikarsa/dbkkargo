@@ -14,6 +14,7 @@
 <div class="container-fluid">
   <br>
   <div class="row">
+    {{-- Bahasa --}}
     @if (!Auth::check())
       <div class="pull-right" style="margin-right:50px;">
         <a href="#"><img src="/image/blank.png" class="flag flag-gb" alt="EN" /></a>
@@ -29,7 +30,6 @@
       <h3>Devian Bachti Karsa</h2>
       <h4><i>Professional Full Services</i></h3>
     </div>
-    {{-- Bahasa --}}
 
   </div>
   <br>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Auth;
+use App\Barang;
 
 class HomepageController extends Controller
 {
@@ -32,5 +33,16 @@ class HomepageController extends Controller
 
     public function contact(){
       return view('homepage.contact');
+    }
+
+    public function search($awb){
+      list($pengirim, $awb, $penerima) = explode("-", $awb);
+      return view('search', [
+          'barang' => Barang::where('awb','=',$awb)
+              ->where('sender','=',$pengirim)
+              ->where('receiver','=',$penerima)
+              ->orderBy('created_at','asc')
+              ->get()
+      ]);
     }
 }

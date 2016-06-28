@@ -25,6 +25,8 @@ Route::group(['middleware' => 'web'], function () {
 
   Route::get('/login', 'Auth\AuthController@getLogin');
 
+  Route::get('/search/{awb}', 'HomepageController@search');
+
   Route::group(['middleware' => 'admin'], function()
   {
     Route::get('/admin/dashboard', 'AdminController@dashboard');

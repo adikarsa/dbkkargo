@@ -50,7 +50,7 @@
   <script type="text/javascript">
     function search(){
       var search = '/'+document.getElementById('search').value;
-      window.open("{{url('search/')}}"+search,"_blank","toolbar=no,scrollbars=no,resizable=no,top=500,left=500,width=400,height=400");
+      window.open("{{url('search/')}}"+search,"_blank","toolbar=no,scrollbars=no,resizable=no,top=200,left=200,width=400,height=400");
     }
   </script>
 </div>
