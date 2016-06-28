@@ -15,7 +15,11 @@ class PegawaiController extends Controller
 {
     //
     public function dashboard(){
-      return view('pegawai.dashboard');
+      return view('pegawai.dashboard', [
+          'barang' => Barang::whereDate('created_at','>',(date('Y-m-d', strtotime('-5 days'))))
+              ->orderBy('created_at','asc')
+              ->get()
+      ]);
     }
 
     public function barang(){

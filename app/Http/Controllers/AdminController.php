@@ -6,13 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\Barang;
 use Validator;
 
 class AdminController extends Controller
 {
     //
     public function dashboard(){
-      return view('admin.dashboard');
+      return view('admin.dashboard', [
+          'barang' => Barang::orderBy('created_at','asc')
+              ->get()
+      ]);
     }
 
     public function pegawai(){

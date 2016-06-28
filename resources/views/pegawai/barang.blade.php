@@ -153,7 +153,7 @@
                       Jenis
                     </th>
                     <th class="text-center" style="width:10%">
-                      Total Box
+                      Jumlah
                     </th>
                     <th class="text-center" style="width:10%">
                       Total Berat
