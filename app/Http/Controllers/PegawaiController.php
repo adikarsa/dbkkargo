@@ -55,8 +55,8 @@ class PegawaiController extends Controller
         'commodity' => $request->commodity,
         'total' => $request->total,
         'weight' => $request->weight,
-        'sender' => $request->sender,
-        'receiver' => $request->receiver,
+        'sender' => strtoupper($request->sender),
+        'receiver' => strtoupper($request->receiver),
         'origin' => $request->origin,
         'destination' => $request->destination,
         'note' => $request->note,
@@ -93,12 +93,12 @@ class PegawaiController extends Controller
       }
 
       AWB::create([
-        'awb' => $request->awb,
+        'awb' => strtoupper($request->awb),
       ]);
 
       foreach ($request->brg as $temp) {
         $barang = Barang::find($temp);
-        $barang->awb = $request->awb;
+        $barang->awb = strtoupper($request->awb);
         $barang->save();
       }
 

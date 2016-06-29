@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="padding-top:100px">
+<div class="container" style="padding-top:30px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <h2 class="text-center">Admin Login Panel</h2>
+            <br>
+            <br>
             <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                   <label for="email" class="col-md-4 control-label">E-Mail</label>

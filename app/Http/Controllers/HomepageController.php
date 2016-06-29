@@ -36,13 +36,23 @@ class HomepageController extends Controller
     }
 
     public function search($awb){
-      list($pengirim, $awb, $penerima) = explode("-", $awb);
-      return view('search', [
-          'barang' => Barang::where('awb','=',$awb)
-              ->where('sender','=',$pengirim)
-              ->where('receiver','=',$penerima)
-              ->orderBy('created_at','asc')
-              ->get()
-      ]);
+      $awb = strtoupper($awb);
+      if (substr_count($awb, '-') == 2)
+      {
+        list($pengirim, $awb2, $penerima) = explode("-", $awb);
+        return view('search', [
+            'barang' => Barang::where('awb','=',$awb2)
+                ->where('sender','=',$pengirim)
+                ->where('receiver','=',$penerima)
+                ->orderBy('created_at','asc')
+                ->get()
+        ]);
+      }
+      else
+      {
+        return view('search', [
+          'barang' => NULL
+        ]);
+      };
     }
 }
