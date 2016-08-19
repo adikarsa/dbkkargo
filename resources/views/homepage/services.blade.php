@@ -112,14 +112,5 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    var myModal = window.location.href;
-    myModal = myModal.substring(myModal.indexOf("#"));
-    if(window.location.href.indexOf(myModal) != -1) {
-      $(myModal).modal('show');
-    }
-  });
-</script>
 
 @endsection

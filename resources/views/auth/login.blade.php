@@ -32,21 +32,23 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                  <div class="col-md-6 col-md-offset-4">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="remember"> Ingat Akun
+                      </label>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="form-group">
-                    <div class="col-md-8 control-label">
-                      <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="remember"> Ingat Akun
-                          </label>
-                      </div>
-                    </div>
-                    <div class="col-md-2 control-label">
+                  <div class="col-md-6 col-md-offset-4">
                       <button type="submit" class="btn btn-primary">
                         <i class="fa fa-btn fa-sign-in"></i> Masuk
                       </button>
-                      {{--<a class="btn btn-link" href="{{ url('/password/reset') }}">Lupa Kata Kunci?</a>--}}
-                    </div>
+                      <a class="btn btn-link" href="{{ url('/password/reset') }}">Lupa Kata Kunci?</a>
+                  </div>
                 </div>
             </form>
         </div>

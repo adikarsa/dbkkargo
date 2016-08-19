@@ -33,8 +33,6 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/admin/pegawai', 'AdminController@pegawai');
 
-    Route::post('/admin/editpegawai', 'AdminController@editpegawai');
-
     Route::post('/admin/newpegawai','AdminController@newpegawai');
 
     Route::delete('/admin/dltpegawai/{id}','AdminController@dltpegawai');
@@ -42,25 +40,14 @@ Route::group(['middleware' => 'web'], function () {
 
   Route::group(['middleware' => 'pegawai'], function()
   {
-    Route::get('/pegawai/dashboard', 'PegawaiController@info');
-
-    Route::post('/pegawai/editinfo', 'PegawaiController@editinfo');
-
+    Route::get('/pegawai/dashboard', 'PegawaiController@dashboard');
     Route::get('/pegawai/barang','PegawaiController@barang');
-
     Route::get('/pegawai/awb','PegawaiController@awb');
-
     Route::get('/pegawai/status','PegawaiController@status');
 
     Route::post('/pegawai/newbarang', 'PegawaiController@newbarang');
-
     Route::post('/pegawai/setAWB', 'PegawaiController@setAWB');
-
     Route::post('/pegawai/setStatus','PegawaiController@setStatus');
-
-    Route::post('/pegawai/editinfo', 'PegawaiController@editinfo');
-
-    Route::post('/pegawai/editbarang', 'PegawaiController@editbarang');
 
     Route::delete('/pegawai/dltbarang/{id}','PegawaiController@dltbarang');
   });

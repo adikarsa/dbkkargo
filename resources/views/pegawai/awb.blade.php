@@ -81,48 +81,19 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
 
-            <div class="row">
-              <div class="form-group{{ $errors->has('awb') ? ' has-error' : '' }}">
-                  <label for="awb" class="col-md-3 control-label">Masukkan AWB</label>
+            <div class="form-group{{ $errors->has('awb') ? ' has-error' : '' }}">
+                <label for="awb" class="col-md-3 control-label">Masukkan AWB</label>
 
-                  <div class="col-md-7">
-                      <input id="awb" type="text" class="form-control" name="awb" value="{{ old('awb') }}">
-                  </div>
-              </div>
+                <div class="col-md-7">
+                    <input id="awb" type="text" class="form-control" name="awb" value="{{ old('awb') }}">
+                </div>
             </div>
-            <div class="row col-md-9 col-md-offset-2">
-              <div class="col-md-4 form-group{{ $errors->has('flight1') ? ' has-error' : '' }}">
-                <label for="flight1" class="col-md-3 control-label">FN1</label>
-
-                <div class="col-md-9">
-                    <input id="flight1" type="text" class="form-control" name="flight1" value="{{ old('flight1') }}">
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-6" style="text-align:right">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-btn fa-user"></i> Submit AWB
+                    </button>
                 </div>
-              </div>
-
-              <div class="col-md-4 form-group{{ $errors->has('flight2') ? ' has-error' : '' }}">
-                <label for="flight2" class="col-md-3 control-label">FN2</label>
-
-                <div class="col-md-9">
-                    <input id="flight2" type="text" class="form-control" name="flight2" value="{{ old('flight2') }}">
-                </div>
-              </div>
-
-              <div class="col-md-4 form-group{{ $errors->has('flight3') ? ' has-error' : '' }}">
-                <label for="flight3" class="col-md-3 control-label">FN3</label>
-
-                <div class="col-md-9">
-                    <input id="flight3" type="text" class="form-control" name="flight3" value="{{ old('flight3') }}">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group">
-                  <div class="col-md-4 col-md-offset-6" style="text-align:right">
-                      <button type="submit" class="btn btn-primary">
-                          <i class="fa fa-btn fa-user"></i> Submit AWB
-                      </button>
-                  </div>
-              </div>
             </div>
         </div>
     </div>
