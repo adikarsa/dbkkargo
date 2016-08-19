@@ -39,7 +39,7 @@
                   <label for="contact" class="col-md-3 control-label">Kontak</label>
 
                   <div class="col-md-7">
-                      <input id="contact" type="text" class="form-control" name="contact">
+                      <input id="contact" type="number" class="form-control" name="contact">
                   </div>
               </div>
 
