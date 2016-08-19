@@ -58,17 +58,21 @@
 <div class="container text-center">
   <h3>Yang Kami Lakukan</h3>
   <div class="row">
-    <div class="col-sm-4">
-      <img src="http://placehold.it/300x160?text=Service-1" class="img-responsive" style="width:100%" alt="Image">
+    <div class="col-sm-3">
+      <a href="{{ url('/services#domestik') }}"><img src="http://placehold.it/300x160?text=Service-1" class="img-responsive" style="width:100%" alt="Image"></a>
       <p>Service 1</p>
     </div>
-    <div class="col-sm-4">
-      <img src="http://placehold.it/300x160?text=Service-2" class="img-responsive" style="width:100%" alt="Image">
+    <div class="col-sm-3">
+      <a href="{{ url('/services#ekspor') }}"><img src="http://placehold.it/300x160?text=Service-2" class="img-responsive" style="width:100%" alt="Image"></a>
       <p>Service 2</p>
     </div>
-    <div class="col-sm-4">
-      <img src="http://placehold.it/300x160?text=Service-3" class="img-responsive" style="width:100%" alt="Image">
+    <div class="col-sm-3">
+      <a href="{{ url('/services#impor') }}"><img src="http://placehold.it/300x160?text=Service-3" class="img-responsive" style="width:100%" alt="Image"></a>
       <p>Service 3</p>
+    </div>
+    <div class="col-sm-3">
+      <a href="{{ url('/services#angkut') }}"><img src="http://placehold.it/300x160?text=Service-4" class="img-responsive" style="width:100%" alt="Image"></a>
+      <p>Service 4</p>
     </div>
   </div>
 </div><br>

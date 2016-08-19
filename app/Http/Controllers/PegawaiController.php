@@ -14,12 +14,16 @@ use Auth;
 class PegawaiController extends Controller
 {
     //
-    public function dashboard(){
+    public function info(){
       return view('pegawai.dashboard', [
           'barang' => Barang::whereDate('created_at','>',(date('Y-m-d', strtotime('-5 days'))))
               ->orderBy('created_at','asc')
               ->get()
       ]);
+    }
+
+    public function editinfo(Request $request){
+
     }
 
     public function barang(){
@@ -41,7 +45,7 @@ class PegawaiController extends Controller
           'receiver' => 'required|max:255',
           'origin' => 'required|max:255',
           'destination' => 'required|max:255',
-          'note' => 'required|max:255',
+          'note' => 'max:255',
       ]);
 
       if ($validator->fails()) {
@@ -66,7 +70,42 @@ class PegawaiController extends Controller
       return redirect('/pegawai/barang');
     }
 
-    public function dltpegawai($id){
+    public function editbarang(Request $request){
+      $barang = Barang::findOrFail($request->e_id);
+
+      $validator = Validator::make($request->all(), [
+          'e_name' => 'required|max:255',
+          'e_commodity' => 'required|max:255',
+          'e_total' => 'required',
+          'e_weight' => 'required',
+          'e_sender' => 'required|max:255',
+          'e_receiver' => 'required|max:255',
+          'e_origin' => 'required|max:255',
+          'e_destination' => 'required|max:255',
+          'e_note' => 'max:255',
+      ]);
+
+      if ($validator->fails()) {
+          return redirect('/pegawai/dashboard')
+              ->withInput()
+              ->withErrors($validator);
+      }
+
+      $barang->name = $request->e_name;
+      $barang->commodity = $request->e_commodity;
+      $barang->total = $request->e_total;
+      $barang->weight = $request->e_weight;
+      $barang->sender = $request->e_sender;
+      $barang->receiver = $request->e_receiver;
+      $barang->origin = $request->e_origin;
+      $barang->destination = $request->e_destination;
+      $barang->note = $request->e_note;
+      $barang->save();
+      
+      return redirect('/pegawai/barang');
+    }
+
+    public function dltbarang($id){
       Barang::findOrFail($id)->delete();
       return redirect('/pegawai/barang');
     }
@@ -83,6 +122,9 @@ class PegawaiController extends Controller
     public function setAWB(Request $request){
       $validator =  Validator::make($request->all(), [
         'awb' => 'required|unique:awb',
+        'flight1' => 'required',
+        'flight2',
+        'flight3',
         'brg.*' => 'required',
       ]);
 

@@ -52,6 +52,35 @@ class AdminController extends Controller
       return redirect('/admin/pegawai');
     }
 
+    public function editpegawai(Request $request){
+      $users = User::findOrFail($request->e_id);
+
+      $validator = Validator::make($request->all(), [
+          'e_name' => 'required|max:255',
+          'e_email' => 'required|email|max:255|unique:users,email,'.$users->id,
+          'e_password' => 'min:6',
+          'e_contact' => 'required|min:10|max:12',
+      ]);
+
+      if ($validator->fails()) {
+          return redirect('/admin/dashboard')
+              ->withInput()
+              ->withErrors($validator);
+      }
+
+      $users->name = $request->e_name;
+      $users->email = $request->e_email;
+      if ($request->e_password != NULL){
+        $users->password = $request->e_password;
+      }
+      if ($request->e_role != NULL){
+        $users->role = $request->e_role;
+      }
+      $users->contact = $request->e_contact;
+      $users->save();
+      return redirect('/admin/pegawai');
+    }
+
     public function dltpegawai($id){
       User::findOrFail($id)->delete();
       return redirect('/admin/pegawai');

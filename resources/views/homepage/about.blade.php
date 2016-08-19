@@ -88,4 +88,14 @@
       </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var collapse = window.location.href;
+    collapse = collapse.substring(collapse.indexOf("#"));
+    if(window.location.href.indexOf(collapse) != -1) {
+      $(collapse).collapse('show');
+    }
+  });
+</script>
 @endsection

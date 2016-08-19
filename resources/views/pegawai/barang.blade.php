@@ -47,7 +47,7 @@
                       </div>
                   </div>
 
-                  <div class="form-group{{ $errors->has('berat') ? ' has-error' : '' }}">
+                  <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
                     <label for="weight" class="col-md-3 control-label">Total Berat</label>
                       <div class="col-md-6 col-xs-10">
                         <input id="weight" type="number" step="0.01" class="form-control" name="weight" value="{{ old('weight') }}">
@@ -206,10 +206,146 @@
                       {{$brg->destination}}
                     </td>
                     <td style="width:10%">
-                      <form action="" method="post" class="col-md-4 col-md-offset-1">
-                        <button type="submit" class="btn btn-xs glyphicon glyphicon-pencil">
-                        </button>
-                      </form>
+                      <div class="col-md-4 col-md-offset-1">
+                          <a class="btn btn-xs btn-primary glyphicon glyphicon-pencil" href="#{{$index+1}}" data-toggle="modal"></a>
+                      </div>
+                    <div id="{{$index+1}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <form class="form-horizontal" action="{{url('pegawai/editbarang')}}" method="post">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Edit Barang</h4>
+                              </div>
+                              <div class="modal-body">
+
+                                <input type="hidden" id="e_id" name="e_id" value="{{ $brg->id }}">
+
+                                <div class="form-group{{ $errors->has('e_name') ? ' has-error' : '' }}">
+                                  <label for="e_name" class="col-md-3 control-label">Nama Barang</label>
+                                    <div class="col-md-7">
+                                      <input id="e_name" type="text" class="form-control" name="e_name" value="{{ $brg->name }}">
+                                        @if ($errors->has('e_name'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('e_name') }}</strong>
+                                          </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('e_commodity') ? ' has-error' : '' }}">
+                                  <label for="e_commodity" class="col-md-3 control-label">Jenis Barang</label>
+                                    <div class="col-md-7">
+                                      <input id="e_commodity" type="text" class="form-control" name="e_commodity" value="{{ $brg->commodity }}">
+                                        @if ($errors->has('e_commodity'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('e_commodity') }}</strong>
+                                          </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('e_total') ? ' has-error' : '' }}">
+                                  <label for="e_total" class="col-md-3 control-label">Total Box</label>
+                                    <div class="col-md-6 col-xs-10">
+                                      <input id="e_total" type="number" class="form-control" name="e_total" value="{{ $brg->total }}">
+                                        @if ($errors->has('e_total'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('e_total') }}</strong>
+                                          </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-2 col-xs-2" style="margin-left:-15px">
+                                      <label class="control-label">box</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('e_weight') ? ' has-error' : '' }}">
+                                  <label for="e_weight" class="col-md-3 control-label">Total Berat</label>
+                                    <div class="col-md-6 col-xs-10">
+                                      <input id="e_weight" type="number" step="0.01" class="form-control" name="e_weight" value="{{ $brg->weight }}">
+                                        @if ($errors->has('e_weight'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('e_weight') }}</strong>
+                                          </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-2 col-xs-2" style="margin-left:-15px">
+                                      <label class="control-label">kg</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('e_sender') ? ' has-error' : '' }}">
+                                  <label for="e_sender" class="col-md-3 control-label">Pengirim</label>
+                                    <div class="col-md-7">
+                                      <input id="e_sender" type="text" class="form-control" name="e_sender" value="{{ $brg->sender }}">
+                                        @if ($errors->has('e_sender'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('e_sender') }}</strong>
+                                          </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('e_receiver') ? ' has-error' : '' }}">
+                                  <label for="e_receiver" class="col-md-3 control-label">Penerima</label>
+                                    <div class="col-md-7">
+                                      <input id="e_receiver" type="text" class="form-control" name="e_receiver" value="{{ $brg->receiver }}">
+                                        @if ($errors->has('e_receiver'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('e_receiver') }}</strong>
+                                          </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('e_origin') ? ' has-error' : '' }}">
+                                  <label for="e_origin" class="col-md-3 control-label">Kota Asal</label>
+                                    <div class="col-md-7">
+                                      <input id="e_origin" type="text" class="form-control" name="e_origin" value="{{ $brg->origin }}">
+                                        @if ($errors->has('e_origin'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('e_origin') }}</strong>
+                                          </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('e_destination') ? ' has-error' : '' }}">
+                                  <label for="e_destination" class="col-md-3 control-label">Kota Tujuan</label>
+                                    <div class="col-md-7">
+                                      <input id="e_destination" type="text" class="form-control" name="e_destination" value="{{ $brg->destination }}">
+                                        @if ($errors->has('e_destination'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('e_destination') }}</strong>
+                                          </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('e_note') ? ' has-error' : '' }}">
+                                  <label for="e_note" class="col-md-3 control-label">Catatan</label>
+                                    <div class="col-md-7">
+                                      <input id="e_note" type="text" class="form-control" name="e_note" value="{{ $brg->note }}">
+                                        @if ($errors->has('e_note'))
+                                          <span class="help-block">
+                                            <strong>{{ $errors->first('e_note') }}</strong>
+                                          </span>
+                                        @endif
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-user"></i> Update
+                                </button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                    </div>
                       <form action="{{url('pegawai/dltbarang/'.$brg->id)}}" method="post" class="col-md-4">
                         {{ method_field('DELETE') }}
                         <button type="submit" class="btn btn-xs btn-danger glyphicon glyphicon-trash">
